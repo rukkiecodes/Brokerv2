@@ -1,5 +1,6 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
+import { auth } from '../plugins/firebase.js'
 
 const routes = [
   {
@@ -21,6 +22,14 @@ const routes = [
         name: 'forgotPassword',
         component: () => import('@/views/auth/ForgotPassword.vue'),
       },
+      {
+        path: '/app',
+        name: 'app',
+        component: () => import('@/views/app/Dashboard.vue'),
+        meta: {
+          requiresAuth: true
+        },
+      },
     ],
   },
 ]
@@ -28,6 +37,15 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+})
+
+router.beforeEach((to, from, next) => {
+  const requiresAuth = to.matched.some(x => x.meta.requiresAuth)
+  const user = auth.currentUser
+
+  if (requiresAuth && !user) next('/')
+  else if (requiresAuth && user) next()
+  else next()
 })
 
 export default router

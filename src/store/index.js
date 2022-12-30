@@ -1,4 +1,11 @@
-// Utilities
-import { createPinia } from 'pinia'
+import {
+    createStore
+} from 'vuex'
 
-export default createPinia()
+// MODULES
+import register from './modules/register.js'
+
+export default createStore({
+    strict: false,
+    modules: { register },
+})
