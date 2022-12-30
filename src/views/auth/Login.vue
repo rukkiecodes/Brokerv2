@@ -10,24 +10,42 @@
           <v-text-field
             type="email"
             label="Email"
+            :rules="emailRules"
             variant="underlined"
             placeholder="example@mail.com"
             prepend-inner-icon="mdi-email"
+            v-model="login.credentials.email"
           />
 
           <v-text-field
-            hide-details
             type="password"
             label="password"
             variant="underlined"
+            :rules="passwordRules"
             prepend-inner-icon="mdi-lock"
+            v-model="login.credentials.password"
             placeholder="Don't worry we are not looking"
           />
 
           <v-card-actions class="px-0 mt-4">
-            <v-btn class="bg-indigo text-capitalize" flat block :loading="false"
+            <v-btn
+              flat
+              style="flex: 1"
+              @click="loginUser"
+              :loading="login.loading"
+              class="bg-indigo text-capitalize"
               >Login</v-btn
             >
+            <v-btn
+              icon
+              flat
+              size="small"
+              @click="googleLogin"
+              :loading="login.googleLoading"
+              class="bg-red text-capitalize px-0"
+            >
+              <v-icon color="white">mdi-google</v-icon>
+            </v-btn>
           </v-card-actions>
 
           <v-card-actions class="px-0 mt-0">
@@ -51,12 +69,38 @@
 </template>
 
 <script>
+import { mapActions, mapState } from "vuex";
 import init from "../../assets/globe";
 export default {
+  data: () => ({
+    passwordRules: [
+      (v) => !!v || "Password is required",
+      (v) =>
+        /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(
+          v
+        ) ||
+        "8 characters, at least one letter, one number and one special character",
+    ],
+    emailRules: [
+      (v) => !!v || "Email is required",
+      (v) =>
+        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v) ||
+        "Please enter a valid email address",
+    ],
+  }),
+
   mounted() {
     this.$nextTick(() => {
       init();
     });
+  },
+
+  methods: {
+    ...mapActions(["loginUser", "googleLogin"]),
+  },
+
+  computed: {
+    ...mapState(["login"]),
   },
 };
 </script>

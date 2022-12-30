@@ -81,10 +81,11 @@
               icon
               flat
               size="small"
+              @click="googleRegister"
               :loading="register.googleLoading"
-              class="bg-white text-capitalize px-0"
+              class="bg-red text-capitalize px-0"
             >
-              <v-icon color="indigo">mdi-google</v-icon>
+              <v-icon color="white">mdi-google</v-icon>
             </v-btn>
           </v-card-actions>
 
@@ -130,7 +131,7 @@ export default {
   },
 
   methods: {
-    ...mapActions(["registerUser"]),
+    ...mapActions(["registerUser", "googleRegister"]),
   },
 
   computed: {

@@ -2,20 +2,20 @@
   <router-view />
   <!-- grepper set vuetify3 snackbar position -->
   <v-snackbar
-    v-model="register.snackbar.active"
-    :color="register.snackbar.bg"
+    v-model="snackbar.snackbar.active"
+    :color="snackbar.snackbar.bg"
     close-on-back
     location="top right"
     absolute
   >
-    {{ register.snackbar.text }}
+    {{ snackbar.snackbar.text }}
 
     <template v-slot:actions>
       <v-btn
         icon
         size="small"
         variant="text"
-        @click="register.snackbar.active = false"
+        @click="snackbar.snackbar.active = false"
       >
         <v-icon>mdi-close</v-icon>
       </v-btn>
@@ -28,7 +28,7 @@
 import { mapState } from "vuex";
 export default {
   computed: {
-    ...mapState(["register"]),
+    ...mapState(["snackbar"]),
   },
 };
 </script>
