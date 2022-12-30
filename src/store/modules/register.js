@@ -27,8 +27,11 @@ const register = {
     actions: {
         registerUser() {
             let credentials = this.state.register.credentials
-            // grepper javascript regex password validation / grepper javascript regex email validation
+            // grepper javascript password regex
             let passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/ //8 characters, at least one letter, one number and one special character
+            // end grepper
+
+            // grepper javascript email regex 
             let emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
             // end grepper
 
