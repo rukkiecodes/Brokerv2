@@ -27,8 +27,15 @@ const routes = [
         name: 'app',
         component: () => import('@/views/app/Dashboard.vue'),
         meta: {
-          requiresAuth: true
+          // requiresAuth: true
         },
+
+        children: [
+          {
+            path: '',
+            component: () => import('@/views/app/routes/Home.vue'),
+          }
+        ]
       },
     ],
   },

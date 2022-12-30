@@ -102,40 +102,68 @@
   box-sizing: border-box;
 }
 
-.background {
-  background-color: #040D21;
+.dashBoardBackground {
+  background-color: #ECF0F3;
   height: 100vh;
   overflow: hidden;
   position: relative;
 }
-.background .gradient {
+.dashBoardBackground .gradient {
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
+  background: rgba(255, 255, 255, 0.25);
+  -webkit-backdrop-filter: blur(7.5px);
+          backdrop-filter: blur(7.5px);
 }
-.background .gradient::after {
+.dashBoardBackground .gradient::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 500px;
   height: 500px;
-  background-color: rgba(255, 0, 0, 0.438);
+  background-color: rgba(255, 0, 0, 0.288);
   border-radius: 50%;
 }
-.background .gradient::before {
+.dashBoardBackground .gradient::before {
   content: "";
   position: absolute;
   bottom: 0;
   right: 0;
   width: 500px;
   height: 500px;
-  background-color: rgba(0, 132, 255, 0.438);
+  background-color: rgba(0, 132, 255, 0.253);
   border-radius: 50%;
 }
-.background::after {
+.dashBoardBackground .app {
+  background-color: transparent;
+}
+.dashBoardBackground .app .appBar {
+  background: rgba(255, 255, 255, 0.25) !important;
+  -webkit-backdrop-filter: blur(7.5px);
+          backdrop-filter: blur(7.5px);
+}
+.dashBoardBackground .app .appBar .profileChip {
+  border-radius: 50px;
+  background: linear-gradient(145deg, #e6e6e6, rgba(255, 255, 255, 0.55));
+  box-shadow: 14px 14px 18px #dedede, -14px -14px 18px #ffffff;
+  -webkit-backdrop-filter: blur(7.5px);
+          backdrop-filter: blur(7.5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.dashBoardBackground .app .appBar .profileChip span:nth-child(1) {
+  font-size: 0.6rem;
+  text-transform: lowercase;
+}
+.dashBoardBackground .app .v-navigation-drawer__content {
+  background: rgba(255, 255, 255, 0.25);
+  -webkit-backdrop-filter: blur(7.5px);
+          backdrop-filter: blur(7.5px);
+}
+.dashBoardBackground::after {
   content: "";
   position: absolute;
   top: 0;
@@ -146,42 +174,12 @@
           backdrop-filter: blur(200px);
   z-index: 1;
 }
-.background .formContainer {
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 10;
-  width: 600px;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-@media (max-width: 768px) {
-  .background .formContainer {
-    transform: translate(-50%, -50%);
-    top: 50%;
-    width: 100%;
-    left: 50%;
-    padding: 1em;
-  }
-}
-.background .formContainer .formCard {
-  background: transparent;
-  -webkit-backdrop-filter: blur(50px);
-          backdrop-filter: blur(50px);
-}
-.background .webgl {
+.dashBoardBackground .webgl {
   position: fixed;
   top: 0;
   right: 0;
   outline: none;
   z-index: 2;
-  transform: translate(25%, 0%);
+  transform: translate(0%, 0%);
   background-color: transparent;
-}
-@media (max-width: 768px) {
-  .background .webgl {
-    transform: translate(0%, 0%);
-  }
-}/*# sourceMappingURL=login.css.map */
+}/*# sourceMappingURL=dashboard.css.map */

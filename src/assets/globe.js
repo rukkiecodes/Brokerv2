@@ -5,7 +5,7 @@ import coordinates from "./files/map.json";
 import flights from "./files/my-flights.json";
 import countries from "./files/globe-data.json";
 
-const init = () => {
+const init = (globeSize) => {
     let renderer, camera, scene, controls;
     // Scene
     scene = new THREE.Scene();
@@ -91,7 +91,7 @@ const init = () => {
     );
     camera.position.x = 0;
     camera.position.y = 0;
-    camera.position.z = 200;
+    camera.position.z = globeSize || 200;
     scene.add(camera);
 
     // Add fog
@@ -135,12 +135,12 @@ const init = () => {
     // controls.minPolarAngle = Math.PI / 3.5;
     // controls.maxPolarAngle = Math.Pi - Math.PI / 3;
 
-    const onDocumentMouseMove = (event) => {
-        mouseX = event.clientX - windowX;
-        mouseY = event.clientY - windowY;
-    };
+    // const onDocumentMouseMove = (event) => {
+    //     mouseX = event.clientX - windowX;
+    //     mouseY = event.clientY - windowY;
+    // };
 
-    document.addEventListener("mousemove", onDocumentMouseMove);
+    // document.addEventListener("mousemove", onDocumentMouseMove);
 
     let mouseX = 0;
     let mouseY = 0;
