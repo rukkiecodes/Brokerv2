@@ -8,7 +8,6 @@
 
         <v-card-text>
           <v-text-field
-            type="email"
             label="Email"
             variant="underlined"
             placeholder="example@mail.com"
@@ -17,8 +16,8 @@
 
           <v-text-field
             hide-details
-            type="password"
             label="password"
+            color="red"
             variant="underlined"
             prepend-inner-icon="mdi-lock"
             placeholder="Don't worry we are not looking"
