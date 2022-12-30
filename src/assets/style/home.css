@@ -102,79 +102,30 @@
   box-sizing: border-box;
 }
 
-.dashBoardBackground {
-  background-color: #ECF0F3;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-}
-.dashBoardBackground .gradient {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(255, 255, 255, 0.25);
-  -webkit-backdrop-filter: blur(7.5px);
-          backdrop-filter: blur(7.5px);
-}
-.dashBoardBackground .gradient::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 500px;
-  height: 500px;
-  background-color: rgba(255, 0, 0, 0.288);
-  border-radius: 50%;
-}
-.dashBoardBackground .gradient::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 500px;
-  height: 500px;
-  background-color: rgba(0, 132, 255, 0.253);
-  border-radius: 50%;
-}
-.dashBoardBackground .app {
-  background-color: transparent;
-}
-.dashBoardBackground .app .appBar .profileChip {
-  border-radius: 50px;
-  background: linear-gradient(145deg, #e6e6e6, rgba(255, 255, 255, 0.55));
-  box-shadow: 14px 14px 18px #dedede, -14px -14px 18px #ffffff;
+.card {
+  background: rgba(255, 255, 255, 0.55);
   -webkit-backdrop-filter: blur(7.5px);
           backdrop-filter: blur(7.5px);
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
-.dashBoardBackground .app .appBar .profileChip span:nth-child(1) {
-  font-size: 0.6rem;
-  text-transform: lowercase;
+
+.home {
+  height: 90vh;
+  overflow-y: auto;
 }
-.dashBoardBackground::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  -webkit-backdrop-filter: blur(200px);
-          backdrop-filter: blur(200px);
-  z-index: 1;
+.home::-webkit-scrollbar {
+  width: 5px;
 }
-.dashBoardBackground .webgl {
-  position: fixed;
-  top: 0;
-  right: 0;
-  outline: none;
-  z-index: 2;
-  transform: translate(10%, 2%);
-  background-color: transparent;
+.home::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.25);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
-@media (max-width: 768px) {
-  .dashBoardBackground .webgl {
-    transform: translate(0%, 0%);
-  }
-}/*# sourceMappingURL=dashboard.css.map */
+
+.v-navigation-drawer__content::-webkit-scrollbar {
+  width: 0px;
+}/*# sourceMappingURL=home.css.map */

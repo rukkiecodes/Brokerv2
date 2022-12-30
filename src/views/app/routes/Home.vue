@@ -1,16 +1,26 @@
 <template>
-  <h1>Home Page</h1>
-  <p>
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error ipsa earum
-    autem! Voluptas labore eum repudiandae, non reprehenderit laboriosam
-    asperiores consectetur, ipsam officiis atque corrupti, natus excepturi
-    dolorum eos ea!
-  </p>
+  <v-container class="home">
+    <v-row justify="space-between">
+      <Investments />
+      <Earnings />
+      <Exchange />
+    </v-row>
+  </v-container>
 </template>
 
 <script>
-export default {};
+import Earnings from "./homeComponents/Earnings.vue";
+import Investments from "./homeComponents/Investments.vue";
+import Exchange from "./homeComponents/Exchange.vue";
+export default {
+  components: {
+    Earnings,
+    Investments,
+    Exchange
+  },
+};
 </script>
 
-<style>
+<style scoped>
+@import "../../../assets/style/home.css";
 </style>
