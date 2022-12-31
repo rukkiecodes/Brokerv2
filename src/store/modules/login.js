@@ -34,6 +34,7 @@ const register = {
                     .then((userCredential) => {
                         const user = userCredential.user;
                         console.log(user)
+                        localStorage.blueZoneToken = user.uid
                         this.state.login.loading = false
                         this.state.snackbar.snackbar.active = true
                         this.state.snackbar.snackbar.text = 'Account created successfully'
@@ -102,6 +103,7 @@ const register = {
                 .then((result) => {
                     const user = result.user;
                     console.log(user)
+                    localStorage.blueZoneToken = user.uid
                     this.state.login.googleLoading = false
                     this.state.snackbar.snackbar.active = true
                     this.state.snackbar.snackbar.text = 'Account created successfully'
