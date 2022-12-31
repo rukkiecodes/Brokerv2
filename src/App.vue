@@ -32,3 +32,7 @@ export default {
   },
 };
 </script>
+
+<style>
+@import '@/assets/icon/css/line-awesome.min.css';
+</style>

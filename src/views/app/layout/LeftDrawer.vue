@@ -12,7 +12,7 @@
         }}</v-list-item-title>
         <template v-slot:prepend>
           <v-avatar class="rounded-lg card" rounded="0">
-            <v-icon color="grey-darken-2" size="small">{{ route.icon }}</v-icon>
+            <i :class="route.icon" class="icon"></i>
           </v-avatar>
         </template>
       </v-list-item>
@@ -23,10 +23,10 @@
         <v-btn
           variant="tonal"
           block
-          class="text-capitalize bg-red rounded-lg"
+          class="text-capitalize text-red rounded-lg"
           flat
         >
-          <v-icon class="mr-2 mdi-flip-h">mdi-location-exit</v-icon>
+          <i class="las la-sign-out-alt icon mr-2"></i>
           Logout
         </v-btn>
       </div>
@@ -38,12 +38,13 @@
 export default {
   data: () => ({
     routes: [
-      { title: "Dashboard", icon: "mdi-view-dashboard", to: "/app" },
-      { title: "Deposit Funds", icon: "mdi-wallet" },
-      { title: "Withdraw", icon: "mdi-bank-outline" },
-      { title: "Transactions", icon: "mdi-chart-line" },
-      { title: "Copy trader", icon: "mdi-chart-line" },
-      { title: "Settings", icon: "mdi-chart-line" },
+      { title: "Dashboard", icon: "las la-chart-pie", to: "/app" },
+      { title: "Deposit Funds", icon: "las la-wallet" },
+      { title: "Withdraw", icon: "las la-wallet" },
+      { title: "Transactions", icon: "las la-chart-bar" },
+      { title: "Copy trader", icon: "las la-chart-area" },
+      { title: "Settings", icon: "las la-cog" },
+      { title: "Profile", icon: "las la-user-alt", to: "/app/profile" },
     ],
   }),
 };
@@ -51,4 +52,8 @@ export default {
 
 <style>
 @import "@/assets/style/home.css";
+
+.icon {
+  font-size: 1.5em;
+}
 </style>
