@@ -5,22 +5,26 @@ import router from "@/router"
 
 const actions = {
     lightTheme() {
+        if (!this.state.profile.theme) return
+        
         this.state.profile.theme = false
-
+        
         updateDoc(doc(db, "users", localStorage.blueZoneToken), { theme: false })
-
+        
         this.state.snackbar.snackbar.active = true
         this.state.snackbar.snackbar.text = 'Light theme activated'
-        this.state.snackbar.snackbar.bg = 'indigo'
+        this.state.snackbar.snackbar.bg = 'green'
     },
-
+    
     darkTheme() {
+        if (this.state.profile.theme) return
+
         this.state.profile.theme = true
 
         updateDoc(doc(db, "users", localStorage.blueZoneToken), { theme: true })
         this.state.snackbar.snackbar.active = true
         this.state.snackbar.snackbar.text = 'Dark theme activated'
-        this.state.snackbar.snackbar.bg = 'indigo'
+        this.state.snackbar.snackbar.bg = 'green'
     },
 
     updateName() {
@@ -29,28 +33,28 @@ const actions = {
         updateDoc(doc(db, "users", localStorage.blueZoneToken), { theme: true })
         this.state.snackbar.snackbar.active = true
         this.state.snackbar.snackbar.text = 'Dark theme activated'
-        this.state.snackbar.snackbar.bg = 'indigo'
+        this.state.snackbar.snackbar.bg = 'green'
     },
 
     updateName() {
         updateDoc(doc(db, "users", localStorage.blueZoneToken), { name: this.state.profile.name })
         this.state.snackbar.snackbar.active = true
         this.state.snackbar.snackbar.text = 'Name updated'
-        this.state.snackbar.snackbar.bg = 'indigo'
+        this.state.snackbar.snackbar.bg = 'green'
     },
 
     updateEmail() {
         updateDoc(doc(db, "users", localStorage.blueZoneToken), { email: this.state.profile.email })
         this.state.snackbar.snackbar.active = true
         this.state.snackbar.snackbar.text = 'Email updated'
-        this.state.snackbar.snackbar.bg = 'indigo'
+        this.state.snackbar.snackbar.bg = 'green'
     },
 
     updatePhone() {
         updateDoc(doc(db, "users", localStorage.blueZoneToken), { phone: this.state.profile.phone })
         this.state.snackbar.snackbar.active = true
         this.state.snackbar.snackbar.text = 'Phone number updated'
-        this.state.snackbar.snackbar.bg = 'indigo'
+        this.state.snackbar.snackbar.bg = 'green'
     },
 
     logoutUser() {
