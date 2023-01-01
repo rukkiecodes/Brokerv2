@@ -11,8 +11,9 @@ import getProfile from './modules/getProfile'
 import updateProfile from './modules/updateProfile'
 import deposit from './modules/deposit'
 import transactions from './modules/transactions'
+import support from './modules/support'
 
 export default createStore({
     strict: false,
-    modules: { snackbar, register, login, profile, getProfile, updateProfile, deposit, transactions },
+    modules: { snackbar, register, login, profile, getProfile, updateProfile, deposit, transactions, support },
 })

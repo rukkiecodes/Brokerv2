@@ -1,5 +1,5 @@
 import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { doc, setDoc } from "firebase/firestore";
+import { doc, increment, setDoc } from "firebase/firestore";
 import { auth, db } from "../../plugins/firebase";
 import router from "../../router";
 
@@ -53,6 +53,9 @@ const register = {
                                 phone: credentials.phone,
                                 provider: 'email',
                             })
+                            setDoc(doc(db, "support", localStorage.blueZoneToken), {
+                                messageCount: increment(1)
+                            })
                         })
                         .catch((error) => {
                             const errorCode = error.code;
@@ -77,7 +80,7 @@ const register = {
                                 this.state.snackbar.snackbar.active = true
                                 this.state.snackbar.snackbar.text = 'Operation not allowed'
                                 this.state.snackbar.snackbar.bg = 'red'
-                            }  else if (errorCode == 'auth/user-disabled') {
+                            } else if (errorCode == 'auth/user-disabled') {
                                 this.state.register.loading = false
                                 this.state.snackbar.snackbar.active = true
                                 this.state.snackbar.snackbar.text = 'User disabled'
@@ -127,11 +130,14 @@ const register = {
                         phone: user.auth.currentUser.phoneNumber,
                         provider: 'google',
                     })
+                    setDoc(doc(db, "support", localStorage.blueZoneToken), {
+                        messageCount: increment(1)
+                    })
                 })
                 .catch((error) => {
                     const errorCode = error.code;
                     const errorMessage = error.message;
-                    
+
                     if (errorCode == 'auth/account-exists-with-different-credential') {
                         this.state.register.googleLoading = false
                         this.state.snackbar.snackbar.active = true

@@ -11,7 +11,7 @@ const state = {
 }
 
 const actions = {
-    async depositFund() {
+    async depositFund({ commit, dispatch }) {
         if (state.amount <= 0 || state.currency == '' || state.address == '') return
 
         this.state.deposit.dialog = false
@@ -37,6 +37,7 @@ const actions = {
         this.state.snackbar.snackbar.active = true
         this.state.snackbar.snackbar.text = 'Deposit request sent'
         this.state.snackbar.snackbar.bg = 'green'
+        return dispatch('getTransactions')
     }
 }
 

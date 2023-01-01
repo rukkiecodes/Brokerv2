@@ -1,4 +1,4 @@
-import { collection, onSnapshot } from "firebase/firestore"
+import { collection, onSnapshot, orderBy, query } from "firebase/firestore"
 import { db } from "@/plugins/firebase"
 
 const state = {
@@ -17,12 +17,13 @@ const mutations = {
 
 const actions = {
     getTransactions({ commit }) {
-        const unsub = onSnapshot(collection(db, 'users', localStorage.blueZoneToken, 'transactions'),
+        const unsub = onSnapshot(query(collection(db, 'users', localStorage.blueZoneToken, 'transactions'), orderBy('timestamp', 'desc')),
             snapshot => {
-                snapshot.docChanges().forEach(change => {
+                this.state.transactions.allTransactions = []
+                snapshot.forEach(doc => {
                     commit('setTransactions', {
-                        id: change.doc.id,
-                        ...change.doc.data()
+                        id: doc.id,
+                        ...doc.data()
                     })
                 })
             })

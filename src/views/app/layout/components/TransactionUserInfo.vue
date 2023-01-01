@@ -10,26 +10,26 @@
       class="text-caption px-0 py-0 mt-1 d-flex justify-space-between"
     >
       <span>Amount</span>
-      <span>{{ transaction.amount }}</span>
+      <span>{{ transaction?.amount }}</span>
     </v-card-text>
     <v-card-text
       class="text-caption px-0 py-0 mt-1 d-flex justify-space-between"
     >
       <span class="text-caption">currency</span>
-      <span class="text-caption">{{ transaction.currency }}</span>
+      <span class="text-caption">{{ transaction?.currency }}</span>
     </v-card-text>
     <v-card-text
       class="text-caption px-0 py-0 mt-1 d-flex justify-space-between"
     >
       <span class="text-caption">Status</span>
-      <span class="text-caption">{{ transaction.state }}</span>
+      <span class="text-caption">{{ transaction?.state }}</span>
     </v-card-text>
     <v-card-text
       class="text-caption px-0 py-0 mt-1 d-flex justify-space-between"
     >
       <span class="text-caption">Date</span>
       <span class="text-caption">{{
-        transaction.timestamp.toDate().toDateString()
+        transaction?.timestamp?.toDate().toDateString()
       }}</span>
     </v-card-text>
     <v-card-text
@@ -37,7 +37,7 @@
     >
       <span class="text-caption">Time</span>
       <span class="text-caption">{{
-        transaction.timestamp.toDate().toLocaleTimeString('en-US')
+        transaction?.timestamp?.toDate().toLocaleTimeString("en-US")
       }}</span>
     </v-card-text>
   </v-card-text>

@@ -30,13 +30,14 @@ export default {
   },
 
   methods: {
-    ...mapActions(["getProfile", "getTransactions"]),
+    ...mapActions(["getProfile", "getTransactions", "getChat"]),
   },
 
   mounted() {
     this.$nextTick(() => {
       this.getProfile();
       this.getTransactions();
+      this.getChat();
     });
   },
 };
