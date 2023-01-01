@@ -46,7 +46,7 @@ const register = {
                             this.state.snackbar.snackbar.active = true
                             this.state.snackbar.snackbar.text = 'Account created successfully'
                             this.state.snackbar.snackbar.bg = 'green'
-                            router.push({ name: 'app' })
+                            router.push('/app')
                             setDoc(doc(db, "users", user.uid), {
                                 name: credentials.name,
                                 email: credentials.email,
@@ -120,7 +120,7 @@ const register = {
                     this.state.snackbar.snackbar.active = true
                     this.state.snackbar.snackbar.text = 'Account created successfully'
                     this.state.snackbar.snackbar.bg = 'green'
-                    router.push({ name: 'app' })
+                    router.push('/app')
                     setDoc(doc(db, "users", user.uid), {
                         name: user.auth.currentUser.displayName,
                         email: user.auth.currentUser.email,

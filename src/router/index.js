@@ -4,7 +4,7 @@ import { auth } from '../plugins/firebase.js'
 
 const routes = [
   {
-    path: '',
+    path: '/',
     name: 'login',
     component: () => import('@/views/auth/Login.vue'),
   },

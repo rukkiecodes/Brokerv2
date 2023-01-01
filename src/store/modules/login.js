@@ -39,7 +39,7 @@ const register = {
                         this.state.snackbar.snackbar.active = true
                         this.state.snackbar.snackbar.text = 'Logged in successfully'
                         this.state.snackbar.snackbar.bg = 'green'
-                        router.push({ name: 'app' }) // redirect to app
+                        router.push('/app') // redirect to app
                     })
                     .catch((error) => {
                         const errorCode = error.code;
@@ -108,7 +108,7 @@ const register = {
                     this.state.snackbar.snackbar.active = true
                     this.state.snackbar.snackbar.text = 'Logged in successfully'
                     this.state.snackbar.snackbar.bg = 'green'
-                    router.push({ name: 'app' }) // redirect to app
+                    router.push('/app')
                 })
                 .catch((error) => {
                     const errorCode = error.code;
