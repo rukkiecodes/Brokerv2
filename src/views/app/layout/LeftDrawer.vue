@@ -14,16 +14,7 @@
 
       <DepositFundDialog />
 
-      <v-list-item active-color="transparent">
-        <v-list-item-title class="text-grey-darken-4 text-body-2"
-          >Withdraw</v-list-item-title
-        >
-        <template v-slot:prepend>
-          <v-avatar class="rounded-lg card" rounded="0">
-            <i class="las la-cash-register icon"></i>
-          </v-avatar>
-        </template>
-      </v-list-item>
+      <WithdrawFunds />
 
       <v-list-item active-color="transparent">
         <v-list-item-title class="text-grey-darken-4 text-body-2"
@@ -101,9 +92,11 @@
 <script>
 import { mapActions } from "vuex";
 import DepositFundDialog from "./components/DepositFunds.vue";
+import WithdrawFunds from "./components/WithdrawFunds.vue";
 export default {
   components: {
     DepositFundDialog,
+    WithdrawFunds
   },
 
   methods: {

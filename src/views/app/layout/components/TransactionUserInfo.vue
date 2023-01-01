@@ -27,6 +27,12 @@
     <v-card-text
       class="text-caption px-0 py-0 mt-1 d-flex justify-space-between"
     >
+      <span class="text-caption">Type</span>
+      <span class="text-caption">{{ transaction?.type }}</span>
+    </v-card-text>
+    <v-card-text
+      class="text-caption px-0 py-0 mt-1 d-flex justify-space-between"
+    >
       <span class="text-caption">Date</span>
       <span class="text-caption">{{
         transaction?.timestamp?.toDate().toDateString()

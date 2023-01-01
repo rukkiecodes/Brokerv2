@@ -21,7 +21,7 @@
     <v-card
       flat
       :key="transaction.id"
-      v-for="transaction in allTransactions"
+      v-for="transaction in allTransactions.slice(0, 20)"
       class="mx-1 pa-2 d-flex card rounded-xl mb-1"
     >
       <TransactionUserInfo :transaction="transaction" />
