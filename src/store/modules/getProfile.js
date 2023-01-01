@@ -6,10 +6,9 @@ const state = {
 }
 
 const actions = {
-    getProfile({ commit }) {
+    getProfile() {
         getDoc(doc(db, "users", localStorage.blueZoneToken)).then((doc) => {
             if (doc.exists()) {
-                // commit('setProfile', doc.data())
                 this.state.profile = { ...doc.data() }
             } else {
                 console.log("No such document!")

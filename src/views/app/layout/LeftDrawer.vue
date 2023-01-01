@@ -21,10 +21,11 @@
     <template v-slot:append>
       <div class="pa-2">
         <v-btn
-          variant="tonal"
-          block
-          class="text-capitalize text-red rounded-lg"
           flat
+          block
+          variant="tonal"
+          @click="logoutUser"
+          class="text-capitalize text-red rounded-lg"
         >
           <i class="las la-sign-out-alt icon mr-2"></i>
           Logout
@@ -35,6 +36,7 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
   data: () => ({
     routes: [
@@ -47,6 +49,10 @@ export default {
       { title: "Profile", icon: "las la-user-alt", to: "/app/profile" },
     ],
   }),
+
+  methods: {
+    ...mapActions(["logoutUser"]),
+  },
 };
 </script>
 

@@ -7,13 +7,10 @@
           v-bind="props"
           color="white"
           style="cursor: pointer"
-          class="py-5 pl-2 pr-5 mr-4 profileChip"
+          class="py-5 pl-2 pr-5 mr-4 card"
         >
           <v-avatar class="mr-2" color="indigo">
-            <v-img
-              v-show="profile.avatar != undefined"
-              :src="profile.avatar"
-            ></v-img>
+            <v-img v-show="profile.avatar != undefined" :src="profile.avatar" cover />
             <i
               v-show="profile.avatar == undefined"
               class="las la-user-alt icon"
@@ -43,7 +40,12 @@
           <v-btn block flat class="text-indigo rounded-lg text-capitalize"
             >Edit Profile</v-btn
           >
-          <v-btn block flat class="mt-4 text-red rounded-lg text-capitalize">
+          <v-btn
+            @click="logoutUser"
+            block
+            flat
+            class="mt-4 text-red rounded-lg text-capitalize"
+          >
             <i class="las la-sign-out-alt icon mr-2"></i>
             Logout
           </v-btn>
@@ -55,11 +57,15 @@
 
 
 <script>
-import { mapState } from "vuex";
+import { mapActions, mapState } from "vuex";
 export default {
   data: () => ({
     menu: false,
   }),
+
+  methods: {
+    ...mapActions(["logoutUser"]),
+  },
 
   computed: {
     ...mapState(["profile"]),

@@ -5,11 +5,11 @@
       <AppBarVue />
 
       <LeftDrawer />
-      
+
       <v-main class="main">
         <router-view />
       </v-main>
-      
+
       <RightDrawer />
     </v-app>
     <canvas class="webgl"></canvas>
@@ -18,8 +18,8 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
-import init from "../../assets/globe";
+import { mapActions } from "vuex";
+// import init from "../../assets/globe";
 import AppBarVue from "./layout/AppBar.vue";
 import LeftDrawer from "./layout/LeftDrawer.vue";
 import RightDrawer from "./layout/RightDrawer.vue";
@@ -27,11 +27,11 @@ export default {
   components: {
     AppBarVue,
     LeftDrawer,
-    RightDrawer
+    RightDrawer,
   },
 
   methods: {
-    ...mapActions(["getProfile"])
+    ...mapActions(["getProfile"]),
   },
 
   mounted() {

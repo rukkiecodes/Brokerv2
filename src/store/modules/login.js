@@ -37,7 +37,7 @@ const register = {
                         localStorage.blueZoneToken = user.uid
                         this.state.login.loading = false
                         this.state.snackbar.snackbar.active = true
-                        this.state.snackbar.snackbar.text = 'Account created successfully'
+                        this.state.snackbar.snackbar.text = 'Logged in successfully'
                         this.state.snackbar.snackbar.bg = 'green'
                         router.push({ name: 'app' }) // redirect to app
                     })
@@ -106,7 +106,7 @@ const register = {
                     localStorage.blueZoneToken = user.uid
                     this.state.login.googleLoading = false
                     this.state.snackbar.snackbar.active = true
-                    this.state.snackbar.snackbar.text = 'Account created successfully'
+                    this.state.snackbar.snackbar.text = 'Logged in successfully'
                     this.state.snackbar.snackbar.bg = 'green'
                     router.push({ name: 'app' }) // redirect to app
                 })
