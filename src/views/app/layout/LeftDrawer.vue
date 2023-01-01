@@ -14,17 +14,6 @@
 
       <DepositFundDialog />
 
-      <!-- <v-list-item active-color="transparent">
-        <v-list-item-title class="text-grey-darken-4 text-body-2"
-          >Deposit Funds</v-list-item-title
-        >
-        <template v-slot:prepend>
-          <v-avatar class="rounded-lg card" rounded="0">
-            <i class="las la-wallet icon"></i>
-          </v-avatar>
-        </template>
-      </v-list-item> -->
-
       <v-list-item active-color="transparent">
         <v-list-item-title class="text-grey-darken-4 text-body-2"
           >Withdraw</v-list-item-title
@@ -65,6 +54,17 @@
         <template v-slot:prepend>
           <v-avatar class="rounded-lg card" rounded="0">
             <i class="las la-cog icon"></i>
+          </v-avatar>
+        </template>
+      </v-list-item>
+
+      <v-list-item active-color="transparent" to="app/support">
+        <v-list-item-title class="text-grey-darken-4 text-body-2"
+          >Support</v-list-item-title
+        >
+        <template v-slot:prepend>
+          <v-avatar class="rounded-lg card" rounded="0">
+            <i class="las la-sms icon"></i>
           </v-avatar>
         </template>
       </v-list-item>

@@ -19,7 +19,6 @@
 
 <script>
 import { mapActions } from "vuex";
-// import init from "../../assets/globe";
 import AppBarVue from "./layout/AppBar.vue";
 import LeftDrawer from "./layout/LeftDrawer.vue";
 import RightDrawer from "./layout/RightDrawer.vue";
@@ -31,13 +30,13 @@ export default {
   },
 
   methods: {
-    ...mapActions(["getProfile"]),
+    ...mapActions(["getProfile", "getTransactions"]),
   },
 
   mounted() {
     this.$nextTick(() => {
-      // init(200);
       this.getProfile();
+      this.getTransactions();
     });
   },
 };
