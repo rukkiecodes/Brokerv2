@@ -106,5 +106,5 @@ export default {
 </script>
 
 <style scoped>
-@import url('@/assets/css/login.css');
+@import url('../../assets/style/login.css');
 </style>
