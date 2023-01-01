@@ -97,7 +97,6 @@ export default {
   backdrop-filter: blur(8.5px);
   -webkit-backdrop-filter: blur(8.5px);
   border: 1px solid rgba(255, 255, 255, 0.18);
-  /* overflow-y: auto !important; */
   height: 80vh;
 }
 

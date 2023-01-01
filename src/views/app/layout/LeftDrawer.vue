@@ -16,7 +16,7 @@
 
       <WithdrawFunds />
 
-      <v-list-item active-color="transparent">
+      <v-list-item active-color="transparent" to="/app/transactions">
         <v-list-item-title class="text-grey-darken-4 text-body-2"
           >Transactions</v-list-item-title
         >

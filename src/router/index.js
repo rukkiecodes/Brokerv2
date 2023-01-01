@@ -38,6 +38,10 @@ const routes = [
       {
         path: 'support',
         component: () => import('@/views/app/routes/Support.vue'),
+      },
+      {
+        path: 'transactions',
+        component: () => import('@/views/app/routes/Transactions.vue'),
       }
     ]
   },
