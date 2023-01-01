@@ -1,18 +1,81 @@
 <template>
   <v-navigation-drawer color="transparent" border="0">
     <v-list>
-      <v-list-item
-        :key="i"
-        v-for="(route, i) in routes"
-        :to="route.to"
-        active-color="transparent"
-      >
-        <v-list-item-title class="text-grey-darken-4 text-body-2">{{
-          route.title
-        }}</v-list-item-title>
+      <v-list-item active-color="transparent" to="/app">
+        <v-list-item-title class="text-grey-darken-4 text-body-2"
+          >Dashboard</v-list-item-title
+        >
         <template v-slot:prepend>
           <v-avatar class="rounded-lg card" rounded="0">
-            <i :class="route.icon" class="icon"></i>
+            <i class="las la-chart-pie icon"></i>
+          </v-avatar>
+        </template>
+      </v-list-item>
+
+      <DepositFundDialog />
+
+      <!-- <v-list-item active-color="transparent">
+        <v-list-item-title class="text-grey-darken-4 text-body-2"
+          >Deposit Funds</v-list-item-title
+        >
+        <template v-slot:prepend>
+          <v-avatar class="rounded-lg card" rounded="0">
+            <i class="las la-wallet icon"></i>
+          </v-avatar>
+        </template>
+      </v-list-item> -->
+
+      <v-list-item active-color="transparent">
+        <v-list-item-title class="text-grey-darken-4 text-body-2"
+          >Withdraw</v-list-item-title
+        >
+        <template v-slot:prepend>
+          <v-avatar class="rounded-lg card" rounded="0">
+            <i class="las la-cash-register icon"></i>
+          </v-avatar>
+        </template>
+      </v-list-item>
+
+      <v-list-item active-color="transparent">
+        <v-list-item-title class="text-grey-darken-4 text-body-2"
+          >Transactions</v-list-item-title
+        >
+        <template v-slot:prepend>
+          <v-avatar class="rounded-lg card" rounded="0">
+            <i class="las la-chart-bar icon"></i>
+          </v-avatar>
+        </template>
+      </v-list-item>
+
+      <v-list-item active-color="transparent">
+        <v-list-item-title class="text-grey-darken-4 text-body-2"
+          >Copy trader</v-list-item-title
+        >
+        <template v-slot:prepend>
+          <v-avatar class="rounded-lg card" rounded="0">
+            <i class="las la-chart-area icon"></i>
+          </v-avatar>
+        </template>
+      </v-list-item>
+
+      <v-list-item active-color="transparent">
+        <v-list-item-title class="text-grey-darken-4 text-body-2"
+          >Settings</v-list-item-title
+        >
+        <template v-slot:prepend>
+          <v-avatar class="rounded-lg card" rounded="0">
+            <i class="las la-cog icon"></i>
+          </v-avatar>
+        </template>
+      </v-list-item>
+
+      <v-list-item active-color="transparent" to="/app/profile">
+        <v-list-item-title class="text-grey-darken-4 text-body-2"
+          >Profile</v-list-item-title
+        >
+        <template v-slot:prepend>
+          <v-avatar class="rounded-lg card" rounded="0">
+            <i class="las la-user-alt icon"></i>
           </v-avatar>
         </template>
       </v-list-item>
@@ -37,18 +100,11 @@
 
 <script>
 import { mapActions } from "vuex";
+import DepositFundDialog from "./components/DepositFunds.vue";
 export default {
-  data: () => ({
-    routes: [
-      { title: "Dashboard", icon: "las la-chart-pie", to: "/app" },
-      { title: "Deposit Funds", icon: "las la-wallet" },
-      { title: "Withdraw", icon: "las la-wallet" },
-      { title: "Transactions", icon: "las la-chart-bar" },
-      { title: "Copy trader", icon: "las la-chart-area" },
-      { title: "Settings", icon: "las la-cog" },
-      { title: "Profile", icon: "las la-user-alt", to: "/app/profile" },
-    ],
-  }),
+  components: {
+    DepositFundDialog,
+  },
 
   methods: {
     ...mapActions(["logoutUser"]),

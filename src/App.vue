@@ -39,4 +39,10 @@ export default {
 
 <style>
 @import "@/assets/icon/css/line-awesome.min.css";
+
+.glass {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(7.5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
 </style>
