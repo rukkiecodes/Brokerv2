@@ -1,17 +1,18 @@
 <template>
   <div class="dashBoardBackground">
     <div class="gradient"></div>
-    <v-app class="app">
-      <AppBarVue />
-
+    <v-layout class="app">
       <LeftDrawer />
+      <RightDrawer />
+      
+      <AppBarVue /> 
+
 
       <v-main class="main">
         <router-view />
       </v-main>
 
-      <RightDrawer />
-    </v-app>
+    </v-layout>
     <canvas class="webgl"></canvas>
     <div class="globeCover"></div>
   </div>

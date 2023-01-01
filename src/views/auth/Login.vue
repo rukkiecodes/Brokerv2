@@ -2,7 +2,13 @@
   <div class="background">
     <div class="gradient"></div>
     <div class="formContainer">
-      <v-card width="400" max-width="98%" class="formCard" theme="dark" flat>
+      <v-card
+        width="400"
+        max-width="98%"
+        class="formCard card rounded-xl"
+        theme="dark"
+        flat
+      >
         <v-card-title>Welcome back</v-card-title>
         <v-card-text>Enter your email and password below</v-card-text>
 
@@ -33,10 +39,10 @@
               style="flex: 1"
               @click="loginUser"
               :loading="login.loading"
-              class="bg-indigo text-capitalize"
+              class="bg-indigo text-capitalize rounded-lg"
               >Login</v-btn
             >
-            <v-btn
+            <!-- <v-btn
               icon
               flat
               size="small"
@@ -45,7 +51,7 @@
               class="bg-red text-capitalize px-0"
             >
               <v-icon color="white">mdi-google</v-icon>
-            </v-btn>
+            </v-btn> -->
           </v-card-actions>
 
           <v-card-actions class="px-0 mt-0">
