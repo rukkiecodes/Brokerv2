@@ -1,9 +1,10 @@
 <template>
   <v-navigation-drawer
-    color="transparent"
-    location="right"
-    width="300"
     border="0"
+    width="300"
+    location="right"
+    :color="color"
+    v-model="drawer.rightDrawer"
   >
     <template v-slot:prepend>
       <div class="pa-1">
@@ -12,7 +13,7 @@
             Transactions
           </v-toolbar-title>
           <v-spacer></v-spacer>
-          <v-btn variant="text" size="small" class="text-capitalize">
+          <v-btn to="/app/transactions" variant="text" size="small" class="text-capitalize">
             See More
           </v-btn>
         </v-toolbar>
@@ -30,15 +31,58 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { useDisplay } from "vuetify";
+import { mapGetters, mapState } from "vuex";
 import TransactionUserInfo from "./components/TransactionUserInfo.vue";
 export default {
   components: {
     TransactionUserInfo,
   },
 
+  created() {
+    this.drawerVisibility();
+  },
+
+  methods: {
+    drawerVisibility() {
+      switch (useDisplay().name.value) {
+        case "xs":
+          return (this.drawer.rightDrawer = false);
+        case "sm":
+          return (this.drawer.rightDrawer = false);
+        case "md":
+          return (this.drawer.rightDrawer = false);
+        case "lg":
+          return (this.drawer.rightDrawer = true);
+        case "xl":
+          return (this.drawer.rightDrawer = true);
+        case "xxl":
+          return (this.drawer.rightDrawer = true);
+      }
+    },
+  },
+
   computed: {
     ...mapGetters(["allTransactions"]),
+
+    ...mapState(["drawer"]),
+
+    color() {
+      switch (useDisplay().name.value) {
+        case "xs":
+          return "white";
+        case "sm":
+          return "white";
+        case "md":
+          return "white";
+        case "lg":
+          return "transparent";
+        case "xl":
+          return "transparent";
+        case "xxl":
+          return "transparent";
+      }
+    },
   },
 };
 </script>

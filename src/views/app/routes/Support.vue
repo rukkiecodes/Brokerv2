@@ -104,6 +104,12 @@ export default {
   width: 5px;
 }
 
+@media (max-width: 768px) {
+  .chatSheet::-webkit-scrollbar {
+    width: 0px;
+  }
+}
+
 .chatSheet::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 10px;

@@ -1,6 +1,10 @@
 <template>
   <v-container>
-    <v-sheet class="overflow-auto transactionSheet" color="transparent" height="90vh">
+    <v-sheet
+      class="overflow-auto transactionSheet"
+      color="transparent"
+      height="90vh"
+    >
       <v-row justify="space-between" dense>
         <v-col
           cols="12"
@@ -34,6 +38,12 @@ export default {
 <style scoped>
 .transactionSheet::-webkit-scrollbar {
   width: 5px;
+}
+
+@media (max-width: 768px) {
+  .transactionSheet::-webkit-scrollbar {
+    width: 0px;
+  }
 }
 
 .transactionSheet::-webkit-scrollbar-thumb {

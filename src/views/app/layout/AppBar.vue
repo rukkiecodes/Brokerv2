@@ -1,6 +1,11 @@
 <template>
-  <v-app-bar title="Application" class="appBar" color="transparent" flat>
-    <!--  -->
+  <v-app-bar class="appBar" color="transparent" flat>
+    <v-app-bar-nav-icon
+      @click.stop="drawer.leftDrawer = !drawer.leftDrawer"
+      class="hidden-lg-and-up"
+    ></v-app-bar-nav-icon>
+    <v-app-bar-title class="hidden-xs">BluZone Finance</v-app-bar-title>
+    <v-spacer />
     <v-menu v-model="menu" :close-on-content-click="false" location="end">
       <template v-slot:activator="{ props }">
         <v-chip
@@ -10,7 +15,11 @@
           class="py-5 pl-2 pr-5 mr-4 card"
         >
           <v-avatar class="mr-2" color="indigo">
-            <v-img v-show="profile.avatar != undefined" :src="profile.avatar" cover />
+            <v-img
+              v-show="profile.avatar != undefined"
+              :src="profile.avatar"
+              cover
+            />
             <i
               v-show="profile.avatar == undefined"
               class="las la-user-alt icon"
@@ -52,6 +61,10 @@
         </v-card-text>
       </v-card>
     </v-menu>
+
+    <v-btn @click="drawer.rightDrawer = !drawer.rightDrawer" icon class="hidden-lg-and-up">
+      <i class="las la-chart-bar icon"></i>
+    </v-btn>
   </v-app-bar>
 </template>
 
@@ -68,7 +81,7 @@ export default {
   },
 
   computed: {
-    ...mapState(["profile"]),
+    ...mapState(["profile", "drawer"]),
   },
 };
 </script>

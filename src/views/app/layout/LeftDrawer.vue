@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer color="transparent" border="0">
+  <v-navigation-drawer v-model="drawer.leftDrawer" :color="color" border="0">
     <v-list>
       <v-list-item active-color="transparent" to="/app">
         <v-list-item-title class="text-grey-darken-4 text-body-2"
@@ -90,17 +90,61 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { useDisplay } from "vuetify";
+import { mapActions, mapState } from "vuex";
 import DepositFundDialog from "./components/DepositFunds.vue";
 import WithdrawFunds from "./components/WithdrawFunds.vue";
+
 export default {
   components: {
     DepositFundDialog,
-    WithdrawFunds
+    WithdrawFunds,
+  },
+
+  created() {
+    this.drawerVisibility();
   },
 
   methods: {
     ...mapActions(["logoutUser"]),
+
+    drawerVisibility() {
+      switch (useDisplay().name.value) {
+        case "xs":
+          return this.drawer.leftDrawer = false;
+        case "sm":
+          return this.drawer.leftDrawer = false;
+        case "md":
+          return this.drawer.leftDrawer = false;
+        case "lg":
+          return this.drawer.leftDrawer = true;
+        case "xl":
+          return this.drawer.leftDrawer = true;
+        case "xxl":
+          return this.drawer.leftDrawer = true;
+      }
+    },
+  },
+
+  computed: {
+    ...mapState(["drawer"]),
+
+    color() {
+      switch (useDisplay().name.value) {
+        case "xs":
+          return "white";
+        case "sm":
+          return "white";
+        case "md":
+          return "white";
+        case "lg":
+          return "transparent";
+        case "xl":
+          return "transparent";
+        case "xxl":
+          return "transparent";
+      }
+    },
   },
 };
 </script>

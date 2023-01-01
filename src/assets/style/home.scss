@@ -16,6 +16,10 @@
 
     &::-webkit-scrollbar {
         width: 5px;
+
+        @include mobile {
+            width: 0px;
+        }
     }
 
     &::-webkit-scrollbar-thumb {
