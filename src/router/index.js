@@ -1,6 +1,5 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
-import { auth } from '../plugins/firebase.js'
 
 const routes = [
   {
