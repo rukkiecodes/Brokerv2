@@ -38,7 +38,7 @@
         </template>
       </v-list-item -->
 
-      <v-list-item active-color="transparent" to="app/support">
+      <v-list-item active-color="transparent" to="/app/support">
         <v-list-item-title class="text-grey-darken-4 text-body-2"
           >Support</v-list-item-title
         >
