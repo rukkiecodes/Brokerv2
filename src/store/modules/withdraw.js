@@ -1,5 +1,6 @@
 import { db } from "@/plugins/firebase"
 import { addDoc, collection, serverTimestamp } from "firebase/firestore"
+import { uuid } from 'vue-uuid'
 
 const state = {
     dialog: false,
@@ -16,7 +17,10 @@ const actions = {
 
         this.state.withdraw.dialog = false
         this.state.withdraw.loading = true
+        let sharedId = uuid.v4()
+
         await addDoc(collection(db, "users", localStorage.blueZoneToken, 'withdraws'), {
+            sharedId,
             currency: state.currency,
             amount: state.amount,
             address: state.address,
@@ -25,6 +29,7 @@ const actions = {
             timestamp: serverTimestamp()
         })
         await addDoc(collection(db, "users", localStorage.blueZoneToken, 'transactions'), {
+            sharedId,
             currency: state.currency,
             amount: state.amount,
             address: state.address,
