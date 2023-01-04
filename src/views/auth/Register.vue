@@ -109,17 +109,9 @@ export default {
   data: () => ({
     passwordRules: [
       (v) => !!v || "Password is required",
-      (v) =>
-        /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(
-          v
-        ) ||
-        "8 characters, at least one letter, one number and one special character",
     ],
     emailRules: [
       (v) => !!v || "Email is required",
-      (v) =>
-        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v) ||
-        "Please enter a valid email address",
     ],
     nameRules: [(v) => !!v || "Name is required"],
   }),

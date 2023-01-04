@@ -19,15 +19,8 @@ const register = {
     actions: {
         registerUser() {
             let credentials = this.state.register.credentials
-            // grepper javascript password regex
-            let passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/ //8 characters, at least one letter, one number and one special character
-            // end grepper
-
-            // grepper javascript email regex 
-            let emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-            // end grepper
-
-            if (credentials.name == '' || !emailRegex.test(credentials.email) || credentials.phone == '' || !passwordRegex.test(credentials.password)) {
+            
+            if (credentials.name == '' || credentials.email == '' || credentials.phone == '' || credentials.password == '') {
                 this.state.snackbar.snackbar.active = true
                 this.state.snackbar.snackbar.text = 'Please fill all fields'
                 this.state.snackbar.snackbar.bg = 'red'
