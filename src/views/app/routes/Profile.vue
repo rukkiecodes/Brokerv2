@@ -37,7 +37,7 @@
         </v-btn>
       </v-card-text -->
       <v-card-subtitle class="font-weight-bold mb-0 pb-0"
-        >Profile Settings</v-card-subtitle
+        >Profile Details</v-card-subtitle
       >
       <v-card-text>
         <v-text-field
