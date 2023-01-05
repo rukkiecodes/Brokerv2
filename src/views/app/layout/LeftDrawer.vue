@@ -7,7 +7,7 @@
         >
         <template v-slot:prepend>
           <v-avatar class="rounded-lg card" rounded="0">
-            <i class="las la-chart-pie icon"></i>
+            <i class="las la-rocket icon"></i>
           </v-avatar>
         </template>
       </v-list-item>
@@ -37,6 +37,17 @@
           </v-avatar>
         </template>
       </v-list-item -->
+
+      <v-list-item active-color="transparent" to="/app/copytrade">
+        <v-list-item-title class="text-grey-darken-4 text-body-2"
+          >Copy Trader</v-list-item-title
+        >
+        <template v-slot:prepend>
+          <v-avatar class="rounded-lg card" rounded="0">
+            <i class="las la-chart-pie icon"></i>
+          </v-avatar>
+        </template>
+      </v-list-item>
 
       <v-list-item active-color="transparent" to="/app/support">
         <v-list-item-title class="text-grey-darken-4 text-body-2"

@@ -45,4 +45,8 @@ export default {
   backdrop-filter: blur(7.5px);
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
+
+.fullContainer {
+  height: 100%;
+}
 </style>

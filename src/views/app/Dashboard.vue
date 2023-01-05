@@ -30,16 +30,24 @@ export default {
     RightDrawer,
   },
 
-  methods: {
-    ...mapActions(["getProfile", "getTransactions", "getChat"]),
-  },
-
   mounted() {
     this.$nextTick(() => {
       this.getProfile();
       this.getTransactions();
       this.getChat();
+      this.getAllCoppies();
+
+      let main = document.querySelector(".main");
+      main.style.height = window.innerHeight + 'px';
+
+      window.addEventListener("resize", () => {
+        main.style.height = window.innerHeight + 'px';
+      });
     });
+  },
+
+  methods: {
+    ...mapActions(["getProfile", "getTransactions", "getChat", "getAllCoppies"]),
   },
 };
 </script>

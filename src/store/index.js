@@ -14,6 +14,7 @@ import transactions from './modules/transactions'
 import support from './modules/support'
 import withdraw from './modules/withdraw'
 import drawer from './modules/drawer'
+import copies from './modules/copies'
 
 export default createStore({
     strict: false,
@@ -28,6 +29,7 @@ export default createStore({
         transactions,
         support,
         withdraw,
-        drawer
+        drawer,
+        copies
     },
 })

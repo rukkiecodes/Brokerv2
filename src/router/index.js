@@ -35,6 +35,10 @@ const routes = [
         component: () => import('@/views/app/routes/Profile.vue'),
       },
       {
+        path: 'copytrade',
+        component: () => import('@/views/app/routes/Copytrade.vue'),
+      },
+      {
         path: 'support',
         component: () => import('@/views/app/routes/Support.vue'),
       },

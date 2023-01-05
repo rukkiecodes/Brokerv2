@@ -1,10 +1,6 @@
 <template>
-  <v-container>
-    <v-sheet
-      class="overflow-auto transactionSheet"
-      color="transparent"
-      height="90vh"
-    >
+  <v-container class="fullContainer py-0">
+    <v-sheet class="overflow-y-auto overflow-x-hidden transactionSheet" color="transparent" height="100%">
       <v-row justify="space-between" dense>
         <v-col
           cols="12"
