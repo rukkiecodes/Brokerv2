@@ -14,7 +14,6 @@
         >Theme</v-card-subtitle
       -->
       <!-- v-card-text class="pt-0 mt-0 d-flex">
-        <!-- <v-btn-toggle v-model="profile.theme" rounded="lg"> </v-btn-toggle> -->
         <v-btn
           flat
           class="mr-1"
