@@ -44,7 +44,11 @@
           </v-card-text>
 
           <v-btn
-            @click="copyTrader(copy?.id)"
+            @click="
+              profile?.copies != undefined && profile?.copies.includes(copy?.id)
+                ? uncopyTrader(copy?.id)
+                : copyTrader(copy?.id)
+            "
             icon
             flat
             class="mr-2"
@@ -75,7 +79,7 @@
 import { mapActions, mapGetters, mapState } from "vuex";
 export default {
   methods: {
-    ...mapActions(["copyTrader"]),
+    ...mapActions(["copyTrader", "uncopyTrader"]),
   },
 
   computed: {

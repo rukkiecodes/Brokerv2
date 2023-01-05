@@ -1,5 +1,5 @@
 import { db } from "@/plugins/firebase"
-import { arrayUnion, collection, doc, getDocs, query, updateDoc, where } from "firebase/firestore"
+import { arrayRemove, arrayUnion, collection, doc, getDocs, query, updateDoc, where } from "firebase/firestore"
 
 const state = {
     allCopies: []
@@ -36,6 +36,18 @@ const actions = {
         this.state.snackbar.active = true
         this.state.snackbar.color = 'success'
         this.state.snackbar.text = 'Copied trader successfully'
+
+        return dispatch('getProfile', 'getAllCoppies')
+    },
+
+    async uncopyTrader({ commit, dispatch }, copy) {
+        await updateDoc(doc(db, "users", localStorage.blueZoneToken), {
+            copies: arrayRemove(copy)
+        })
+
+        this.state.snackbar.active = true
+        this.state.snackbar.color = 'success'
+        this.state.snackbar.text = 'Uncopied trader successfully'
 
         return dispatch('getProfile', 'getAllCoppies')
     }
