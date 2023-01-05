@@ -6,10 +6,11 @@ const state = {
 }
 
 const actions = {
-    getProfile() {
+    getProfile({ commit, dispatch }) {
         getDoc(doc(db, "users", localStorage.blueZoneToken)).then((doc) => {
             if (doc.exists()) {
                 this.state.profile = doc.data()
+                return dispatch("getAllTrades")
             } else {
                 console.log("No such document!")
             }

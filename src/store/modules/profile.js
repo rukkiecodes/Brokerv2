@@ -1,6 +1,3 @@
-const state = {
-    name: "John Doe",
-    theme: false
-}
+const state = null
 
 export default { state }

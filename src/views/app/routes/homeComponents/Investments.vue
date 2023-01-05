@@ -10,7 +10,14 @@
             >
             <v-card-text
               class="text-h5 text-grey-darken-3 pt-0 font-weight-black px-0"
-              >${{(profile?.investment).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}</v-card-text
+              >${{
+                (profile?.investment != undefined && profile?.investment
+                  ? profile?.investment
+                  : 0
+                )
+                  .toString()
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+              }}</v-card-text
             >
             <v-card-title
               class="text-caption text-grey-darken-1 pb-0 mt-n1 pt-0 px-0"

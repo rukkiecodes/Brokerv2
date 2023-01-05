@@ -15,6 +15,7 @@ import support from './modules/support'
 import withdraw from './modules/withdraw'
 import drawer from './modules/drawer'
 import copies from './modules/copies'
+import tradeMonitor from './modules/tradeMonitor'
 
 export default createStore({
     strict: false,
@@ -30,6 +31,7 @@ export default createStore({
         support,
         withdraw,
         drawer,
-        copies
+        copies,
+        tradeMonitor
     },
 })

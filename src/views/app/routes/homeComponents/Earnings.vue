@@ -11,7 +11,7 @@
             <v-card-text
               class="text-h5 text-grey-darken-3 pt-0 font-weight-black px-0"
               >${{
-                (profile?.earnings)
+                (profile?.earnings != undefined && profile?.earnings ? profile?.earnings : 0)
                   .toString()
                   .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
               }}</v-card-text

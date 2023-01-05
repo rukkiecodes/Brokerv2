@@ -49,7 +49,7 @@ const actions = {
         this.state.snackbar.color = 'success'
         this.state.snackbar.text = 'Uncopied trader successfully'
 
-        return dispatch('getProfile', 'getAllCoppies')
+        return dispatch('getProfile', 'getAllCoppies', 'getAllTrades')
     }
 }
 

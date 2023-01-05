@@ -4,14 +4,12 @@
     <v-layout class="app">
       <LeftDrawer />
       <RightDrawer />
-      
-      <AppBarVue /> 
 
+      <AppBarVue />
 
       <v-main class="main">
         <router-view />
       </v-main>
-
     </v-layout>
     <canvas class="webgl"></canvas>
     <div class="globeCover"></div>
@@ -38,16 +36,22 @@ export default {
       this.getAllCoppies();
 
       let main = document.querySelector(".main");
-      main.style.height = window.innerHeight + 'px';
+      main.style.height = window.innerHeight + "px";
 
       window.addEventListener("resize", () => {
-        main.style.height = window.innerHeight + 'px';
+        main.style.height = window.innerHeight + "px";
       });
     });
   },
 
   methods: {
-    ...mapActions(["getProfile", "getTransactions", "getChat", "getAllCoppies"]),
+    ...mapActions([
+      "profile",
+      "getProfile",
+      "getTransactions",
+      "getChat",
+      "getAllCoppies"
+    ]),
   },
 };
 </script>
