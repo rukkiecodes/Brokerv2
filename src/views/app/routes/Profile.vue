@@ -10,11 +10,10 @@
         <v-file-input @change="pickAvatar" class="d-none" ref="fileInput" />
       </v-card-text>
 
-      <v-card-subtitle class="font-weight-bold mb-0 pb-0"
+      <!--v-card-subtitle class="font-weight-bold mb-0 pb-0"
         >Theme</v-card-subtitle
-      >
-      <v-card-text class="pt-0 mt-0 d-flex">
-        <!-- <v-btn-toggle v-model="profile.theme" rounded="lg"> </v-btn-toggle> -->
+      -->
+      <!-- v-card-text class="pt-0 mt-0 d-flex">
         <v-btn
           flat
           class="mr-1"
@@ -36,9 +35,9 @@
         >
           <i class="las la-moon icon"></i>
         </v-btn>
-      </v-card-text>
+      </v-card-text -->
       <v-card-subtitle class="font-weight-bold mb-0 pb-0"
-        >Profile Settings</v-card-subtitle
+        >Profile Details</v-card-subtitle
       >
       <v-card-text>
         <v-text-field

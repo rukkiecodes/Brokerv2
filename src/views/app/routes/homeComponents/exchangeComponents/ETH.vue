@@ -8,9 +8,9 @@
   <v-card-title class="pl-0 text-h5 pb-0" id="ethPrice">
     <small style="font-size: 0.6rem">USD</small></v-card-title
   >
-  <v-card-title class="pl-0 text-body-1 pt-0 text-red-lighten-1">
+  <!-- v-card-title class="pl-0 text-body-1 pt-0 text-red-lighten-1">
     −70.00 −0.42%
-  </v-card-title>
+  </v-card-title -->
   <canvas id="ethereumChart"></canvas>
 </template>
   
