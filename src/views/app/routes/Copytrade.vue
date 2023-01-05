@@ -42,9 +42,28 @@
               <span class="text-caption">{{ copy?.currency }}</span>
             </v-card-text>
           </v-card-text>
-          
-          <v-btn icon flat class="mr-2" size="30" color="green">
-            <i class="lar la-copy"></i>
+
+          <v-btn
+            @click="copyTrader(copy?.id)"
+            icon
+            flat
+            class="mr-2"
+            size="30"
+            :color="
+              profile?.copies != undefined && profile?.copies.includes(copy?.id)
+                ? 'amber'
+                : 'green'
+            "
+          >
+            <i
+              class="text-white"
+              :class="
+                profile?.copies != undefined &&
+                profile?.copies.includes(copy?.id)
+                  ? 'las la-check'
+                  : 'lar la-copy'
+              "
+            ></i>
           </v-btn>
         </v-card>
       </v-col>
@@ -53,10 +72,16 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapActions, mapGetters, mapState } from "vuex";
 export default {
+  methods: {
+    ...mapActions(["copyTrader"]),
+  },
+
   computed: {
     ...mapGetters(["allCopies"]),
+
+    ...mapState(["profile"]),
   },
 };
 </script>

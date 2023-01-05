@@ -1,5 +1,5 @@
 import { db } from "@/plugins/firebase"
-import { collection, getDocs, query, where } from "firebase/firestore"
+import { arrayUnion, collection, doc, getDocs, query, updateDoc, where } from "firebase/firestore"
 
 const state = {
     allCopies: []
@@ -20,16 +20,24 @@ const actions = {
         this.state.copies.allCopies = []
         getDocs(query(collection(db, "copyTrades"), where('isDeleted', '==', false))).then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
-                console.log({
-                    id: doc.id,
-                    ...doc.data()
-                })
                 commit('setCopies', {
                     id: doc.id,
                     ...doc.data()
                 })
             })
         })
+    },
+
+    async copyTrader({ commit, dispatch }, copy) {
+        await updateDoc(doc(db, "users", localStorage.blueZoneToken), {
+            copies: arrayUnion(copy)
+        })
+
+        this.state.snackbar.active = true
+        this.state.snackbar.color = 'success'
+        this.state.snackbar.text = 'Copied trader successfully'
+
+        return dispatch('getProfile', 'getAllCoppies')
     }
 }
 

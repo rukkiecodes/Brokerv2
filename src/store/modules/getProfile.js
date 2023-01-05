@@ -2,14 +2,14 @@ import { auth, db } from "@/plugins/firebase"
 import { doc, getDoc } from "firebase/firestore"
 
 const state = {
-    profile: {}
+    profile: null
 }
 
 const actions = {
     getProfile() {
         getDoc(doc(db, "users", localStorage.blueZoneToken)).then((doc) => {
             if (doc.exists()) {
-                this.state.profile = { ...doc.data() }
+                this.state.profile = doc.data()
             } else {
                 console.log("No such document!")
             }
