@@ -34,13 +34,15 @@
           />
 
           <v-text-field
-            type="password"
             label="password"
             variant="underlined"
             :rules="passwordRules"
             prepend-inner-icon="mdi-lock"
+            @click:append="show1 = !show1"
+            :type="show1 ? 'text' : 'password'"
             v-model="register.credentials.password"
             placeholder="Don't worry we are not looking"
+            :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
           />
 
           <v-card-actions class="px-0">
@@ -114,6 +116,7 @@ export default {
       (v) => !!v || "Email is required",
     ],
     nameRules: [(v) => !!v || "Name is required"],
+    show1: false,
   }),
 
   mounted() {

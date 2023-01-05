@@ -24,13 +24,15 @@
           />
 
           <v-text-field
-            type="password"
             label="password"
             variant="underlined"
             :rules="passwordRules"
             prepend-inner-icon="mdi-lock"
+            @click:append="show1 = !show1"
+            :type="show1 ? 'text' : 'password'"
             v-model="login.credentials.password"
             placeholder="Don't worry we are not looking"
+            :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
           />
 
           <v-card-actions class="px-0 mt-4">
@@ -81,6 +83,7 @@ export default {
   data: () => ({
     passwordRules: [(v) => !!v || "Password is required"],
     emailRules: [(v) => !!v || "Email is required"],
+    show1: false,
   }),
 
   mounted() {
