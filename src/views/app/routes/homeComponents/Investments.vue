@@ -10,7 +10,7 @@
             >
             <v-card-text
               class="text-h5 text-grey-darken-3 pt-0 font-weight-black px-0"
-              >${{(15000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}</v-card-text
+              >${{(profile?.investment).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}</v-card-text
             >
             <v-card-title
               class="text-caption text-grey-darken-1 pb-0 mt-n1 pt-0 px-0"
@@ -42,6 +42,7 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "vue-chartjs";
+import { mapState } from "vuex";
 
 ChartJS.register(
   CategoryScale,
@@ -89,6 +90,10 @@ export default {
       },
     },
   }),
+
+  computed: {
+    ...mapState(["profile"]),
+  },
 };
 </script>
 
