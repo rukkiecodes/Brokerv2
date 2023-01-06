@@ -38,6 +38,7 @@
           <v-card-actions class="px-0 mt-4">
             <v-btn
               flat
+              height="40"
               style="flex: 1"
               @click="loginUser"
               :loading="login.loading"

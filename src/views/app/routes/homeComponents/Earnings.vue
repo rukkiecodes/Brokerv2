@@ -4,26 +4,16 @@
       <v-card-text>
         <v-row no-gutters justify="space-between">
           <v-col cols="4">
-            <v-card-title
-              class="text-caption text-grey-darken-1 pb-0 px-0 text-uppercase"
-              >Earnings</v-card-title
-            >
-            <v-card-text
-              class="text-h5 text-grey-darken-3 pt-0 font-weight-black px-0"
-              >${{
-                (profile?.earnings != undefined && profile?.earnings ? profile?.earnings : 0)
-                  .toString()
-                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-              }}</v-card-text
-            >
-            <v-card-title
-              class="text-caption text-grey-darken-1 pb-0 mt-n1 pt-0 px-0"
-              >Bitcoin(btc)</v-card-title
-            >
-            <v-card-text
-              class="text-body-1 text-grey-darken-3 pt-0 font-weight-black px-0"
-              >0.9111</v-card-text
-            >
+            <v-card-title class="text-caption text-grey-darken-1 pb-0 px-0 text-uppercase">Earnings</v-card-title>
+            <v-card-text class="text-h5 text-grey-darken-3 pt-0 font-weight-black px-0">${{
+            (profile?.earnings != undefined && profile?.earnings ? profile?.earnings : 0)
+              .toString()
+              .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+            }}</v-card-text>
+            <v-card-title class="text-caption text-grey-darken-1 pb-0 mt-n1 pt-0 px-0">Bitcoin(btc)</v-card-title>
+            <v-card-text class="text-body-1 text-grey-darken-3 pt-0 font-weight-black px-0">{{
+              profile?.earningsBTC != undefined && profile?.earningsBTC ? profile?.earningsBTC : 0
+            }}</v-card-text>
           </v-col>
 
           <v-col cols="8" class="d-flex align-end">

@@ -73,6 +73,7 @@
           <v-card-actions class="px-0 mt-0">
             <v-btn
               flat
+              height="40"
               style="flex: 1"
               @click="registerUser"
               :loading="register.loading"
