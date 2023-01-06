@@ -19,15 +19,25 @@
         <v-card-title>Hello, {{ profile?.name }}</v-card-title>
         <v-card-text>
           <span class="text-body-2">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium deserunt maiores totam sint.
+            Welcome to our Leadway Finance! We're excited to have you here.
+            Please kindly Enter a pin to be used for your withdrawals.
           </span>
 
-          {{ pin }}
+          <v-divider class="my-4" />
+
+          <span class="text-body-2">
+            Please enter your PIN to be used for your withdrawals.
+
+            This is an explanation(use a explanation icon first before this write up) : This PIN is used to verify your
+            identity and deny withdrawal request that is not from you, so keep it safe.
+          </span>
+
           <v-text-field v-model="pin" @keypress.enter="updatePin" type="number" variant="outlined" density="compact"
             :counter="3" :maxlength="3" placeholder="Enter PIN" class="pt-4" hide-details />
         </v-card-text>
         <v-card-actions>
-          <v-btn class="text-capitalize bg-indigo rounded-xl" block @click="updatePin" :loading="loading">Set Pin</v-btn>
+          <v-btn class="text-capitalize bg-indigo rounded-xl" block @click="updatePin" :loading="loading">Set
+            Pin</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
