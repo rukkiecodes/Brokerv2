@@ -6,7 +6,7 @@ const state = {
     dialog: false,
     address: "0xe58ad656244e17c5f51c91834276f1774671a2c7",
     copyText: "Copy",
-    currency: '',
+    currency: 'Bitcoin',
     amount: 0,
     loading: false,
 }

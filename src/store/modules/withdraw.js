@@ -4,9 +4,9 @@ import { uuid } from 'vue-uuid'
 
 const state = {
     dialog: false,
-    address: "",
+    address: null,
     copyText: "Copy",
-    currency: '',
+    currency: null,
     amount: 0,
     loading: false,
 }
