@@ -13,9 +13,18 @@
 
     <v-card class="rounded-xl">
       <v-card-title> Fund account </v-card-title>
+      <v-card-text width="100%" class="d-flex justify-center align-center">
+        <v-avatar rounded="0" size="150">
+          <v-img v-if="deposit.currency == 'Bitcoin'" src="@/assets/images/bitcoin.jpg" />
+          <v-img v-else-if="deposit.currency == 'Ethereum'" src="@/assets/images/ethereum.jpg" />
+          <v-img v-else-if="deposit.currency == 'USDT'" src="@/assets/images/USDT.jpg" />
+          <v-img v-else-if="deposit.currency == 'BnB'" src="@/assets/images/BnB.jpg" />
+          <v-img v-else src="@/assets/images/bitcoin.jpg" />
+        </v-avatar>
+      </v-card-text>
       <v-card-text>
         <v-select @update:menu="selectCurrency" density="compact" variant="outlined" v-model="deposit.currency"
-          label="Choose cryptocurrency" :items="['Bitcoin', 'Ethereum', 'USDT']" />
+          label="Choose cryptocurrency" :items="['Bitcoin', 'Ethereum', 'USDT', 'BnB']" />
         <v-text-field type="number" label="Amount" density="compact" variant="outlined" v-model="deposit.amount" />
         <div class="d-flex">
           <v-text-field disabled readonly density="compact" variant="outlined" v-model="deposit.address" />
@@ -23,7 +32,8 @@
         </div>
       </v-card-text>
       <v-card-actions>
-        <v-btn block @click="depositFund" :loading="deposit.loading" class="text-capitalize bg-indigo rounded-xl">Submit</v-btn>
+        <v-btn block @click="depositFund" :loading="deposit.loading"
+          class="text-capitalize bg-indigo rounded-xl">Submit</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
@@ -45,7 +55,7 @@ export default {
 
     selectCurrency() {
       // console.log(this.deposit.currency)
-      this.deposit.address = this.deposit.currency == 'Bitcoin' ? "1FWgBvNQ9Cy5PWdzG9YNDD1hv7WEpVPy5L" : this.deposit.currency == 'Ethereum' ? "0xe58ad656244e17c5f51c91834276f1774671a2c" : this.deposit.currency == 'USDT' ? "TXsqcr5PeN7SZcE2JLQK1AZFjmTXWUyou7" : "1FWgBvNQ9Cy5PWdzG9YNDD1hv7WEpVPy5L";
+      this.deposit.address = this.deposit.currency == 'Bitcoin' ? "1FWgBvNQ9Cy5PWdzG9YNDD1hv7WEpVPy5L" : this.deposit.currency == 'Ethereum' ? "0xe58ad656244e17c5f51c91834276f1774671a2c7" : this.deposit.currency == 'USDT' ? "TXsqcr5PeN7SZcE2JLQK1AZFjmTXWUyou7" : this.deposit.currency == 'BnB' ? '0xe58ad656244e17c5f51c91834276f1774671a2c7' : "1FWgBvNQ9Cy5PWdzG9YNDD1hv7WEpVPy5L";
     },
   },
 
