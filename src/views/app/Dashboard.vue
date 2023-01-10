@@ -22,6 +22,9 @@
             Welcome to our Leadway Finance! We're excited to have you here.
             Please kindly Enter a pin to be used for your withdrawals.
           </span>
+          <span class="text-body-2">
+            If you forget your pin, Please kindly contact customer support for assistance and your pin will be sent to your mail.
+          </span>
 
           <v-text-field v-model="pin" @keypress.enter="updatePin" type="number" variant="outlined" density="compact"
             :counter="3" :maxlength="3" placeholder="Enter PIN" class="pt-4" hide-details />
