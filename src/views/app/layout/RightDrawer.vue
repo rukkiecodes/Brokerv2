@@ -1,11 +1,5 @@
 <template>
-  <v-navigation-drawer
-    border="0"
-    width="300"
-    location="right"
-    :color="color"
-    v-model="drawer.rightDrawer"
-  >
+  <v-navigation-drawer border="0" width="300" location="right" :color="color" v-model="drawer.rightDrawer">
     <template v-slot:prepend>
       <div class="pa-1">
         <v-toolbar density="compact" color="transparent">
@@ -13,18 +7,21 @@
             Transactions
           </v-toolbar-title>
           <v-spacer></v-spacer>
-          <v-btn to="/app/transactions" variant="text" size="small" class="text-capitalize">
+          <v-btn :disabled="allTransactions.length <= 0" to="/app/transactions" variant="text" size="small"
+            class="text-capitalize">
             See More
           </v-btn>
         </v-toolbar>
       </div>
     </template>
-    <v-card
-      flat
-      :key="transaction.id"
-      v-for="transaction in allTransactions.slice(0, 20)"
-      class="mx-1 pa-2 d-flex card rounded-xl mb-1"
-    >
+    <v-card v-if="allTransactions.length <= 0" flat color="transparent" height="100%" class="pt-16">
+      <v-img src="@/assets/images/empty.svg" width="90%" />
+      <v-card-text class="text-center text-body-1">
+        No transactions yet
+      </v-card-text>
+    </v-card>
+    <v-card flat v-else :key="transaction.id" v-for="transaction in allTransactions.slice(0, 20)"
+      class="mx-1 pa-2 d-flex card rounded-xl mb-1">
       <TransactionUserInfo :transaction="transaction" />
     </v-card>
   </v-navigation-drawer>

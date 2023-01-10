@@ -23,15 +23,6 @@
             Please kindly Enter a pin to be used for your withdrawals.
           </span>
 
-          <v-divider class="my-4" />
-
-          <span class="text-body-2">
-            Please enter your PIN to be used for your withdrawals.
-
-            This is an explanation(use a explanation icon first before this write up) : This PIN is used to verify your
-            identity and deny withdrawal request that is not from you, so keep it safe.
-          </span>
-
           <v-text-field v-model="pin" @keypress.enter="updatePin" type="number" variant="outlined" density="compact"
             :counter="3" :maxlength="3" placeholder="Enter PIN" class="pt-4" hide-details />
         </v-card-text>
@@ -106,7 +97,7 @@ export default {
           this.loading = false;
           this.getProfile();
           this.snackbar.active = true;
-          this.snackbar.text = "Pin updated successfully";
+          this.snackbar.text = "Pin updated successfully\nIf you forget your pin, Please kindly contact customer support for assistance and your pin will be sent to your mail\nYou're Good To Go ✅";
           this.snackbar.color = "success";
         })
     }
